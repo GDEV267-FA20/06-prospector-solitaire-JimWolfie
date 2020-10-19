@@ -73,7 +73,7 @@
   <slot id="43" x="-3" y="-3" faceup="0" layer="6" hiddenby="53" />
   <slot id="44" x="-1" y="-3" faceup="1" layer="6" />
   <slot id="45" x="1" y="-3"  faceup="1" layer="6" />
-  <slot id="46" x="3" y="-3"  faceup="1" layer="6"  />
+  <slot id="46" x="3" y="-3"  faceup="1" layer="6" />
   <slot id="47" x="5" y="-3"  faceup="1" layer="6" />
   <slot id="48" x="7" y="-3"  faceup="1" layer="6" />
   <slot id="49" x="9" y="-3"  faceup="1" layer="6" />
