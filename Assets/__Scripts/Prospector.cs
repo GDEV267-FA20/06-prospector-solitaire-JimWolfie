@@ -10,7 +10,7 @@ public class Prospector : MonoBehaviour
 
     [Header("set in inspector")]
     public TextAsset deckXML;
-    public TextAsset layoutXML;
+    public TextAsset SpiderXML;
     public float xOffset =3;
     public float yOffset =-2.5f;
     public Vector3 layoutCenter;
@@ -42,7 +42,7 @@ public class Prospector : MonoBehaviour
             c.transform.localPosition = new Vector3((cNum%13)*3, cNum/13*4,0);
         }*/
         layout = GetComponent<Layout>();
-        layout.ReadLayout(layoutXML.text);
+        layout.ReadLayout(SpiderXML.text);
         drawPile = ConvertListCardsToListCardProspetor(deck.cards);
         LayoutGame();
     }

@@ -23,8 +23,9 @@ public class Layout : MonoBehaviour
     public List<SlotDef> slotDefs;
     public SlotDef drawPile;
     public SlotDef discardPile;
+    public SlotDef trayPile;
 
-    public string[] sortingLayerNames = new string[]{"Row0", "Row1","Row2","Row3","Discard","Draw"};
+    public string[] sortingLayerNames = new string[]{"Row0", "Row1","Row2","Row3","Discard","Draw", "Row4", "Row5", "Trays"};
 
     public void ReadLayout(string xmlText)
     {
@@ -79,6 +80,9 @@ public class Layout : MonoBehaviour
 
                 case"discardpile":
                     discardPile =tSD;
+                    break;
+                case"traypile":
+                    trayPile =tSD;
                     break;
             }
         }
