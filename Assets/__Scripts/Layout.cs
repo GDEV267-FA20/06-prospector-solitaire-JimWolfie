@@ -25,8 +25,8 @@ public class Layout : MonoBehaviour
     public SlotDef discardPile;
     public SlotDef trayPile;
 
-    public string[] sortingLayerNames; //=new string[]{"Row0", "Row1","Row2","Row3","Discard","Draw","Row4","Row5","Trays"};
-    private void Awake()
+    public string[] sortingLayerNames =new string[]{"Row0", "Row1","Row2","Row3","Discard","Draw","Row4","Row5","Trays"};
+    /*private void Awake()
     {
         sortingLayerNames = new string[9];
         sortingLayerNames[0]= "Row0";
@@ -38,7 +38,7 @@ public class Layout : MonoBehaviour
         sortingLayerNames[6] = "Row4";
         sortingLayerNames[7] = "Row5";
         sortingLayerNames[8] ="Trays";
-    }
+    }*/
     public void ReadLayout(string xmlText)
     {
         xmlr = new PT_XMLReader();
@@ -65,7 +65,7 @@ public class Layout : MonoBehaviour
             tSD.y = float.Parse(slotsX[i].att("y"));
             tSD.layerID = int.Parse(slotsX[i].att("layer"));
 
-            print(sortingLayerNames[5]);
+            //print(sortingLayerNames[5]);
             tSD.layerName = sortingLayerNames[tSD.layerID];
 
             switch(tSD.type)

@@ -61,9 +61,15 @@ public class Prospector : MonoBehaviour
 
     CardProspector Draw()
     {
-        CardProspector cd = drawPile[0];
-        drawPile.RemoveAt(0);
-        return(cd);
+        print(drawPile[0]);
+        if(drawPile[0]!=null)
+        {
+            CardProspector cd = drawPile[0];
+            drawPile.RemoveAt(0);
+            return (cd);
+
+        }
+        return null;
     }
     void LayoutGame()
     {
@@ -76,6 +82,7 @@ public class Prospector : MonoBehaviour
         CardProspector cp;
         foreach(SlotDef tSD in layout.slotDefs)
         {
+            
             cp = Draw();
             cp.faceUp = tSD.faceUp;
             cp.transform.parent = layoutAnchor;
@@ -98,8 +105,12 @@ public class Prospector : MonoBehaviour
                 tCP.hiddenBy.Add(cp);
             }
         }
-        MoveToTarget(Draw());
-        UpdateDrawPile();
+        if(drawPile.Count>0)
+        {
+            MoveToTarget(Draw());
+            UpdateDrawPile();
+        }
+        
 
     }
     CardProspector FindCardByLayoutID(int layoutID)
