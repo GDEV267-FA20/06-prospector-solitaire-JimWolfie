@@ -212,7 +212,9 @@ public class Prospector : MonoBehaviour
                 SetTableauFaces();
                 break;
         }
+        CheckForGameOver();
     }
+    
     public bool AdjacentRank(CardProspector c0, CardProspector c1)
     {
         if(!c0.faceUp || !c1.faceUp)return(false);
@@ -221,5 +223,31 @@ public class Prospector : MonoBehaviour
         if(c0.rank == 1 && c1.rank == 13)return(true);
         if(c0.rank == 13 && c1.rank == 1)return(true);
         return(false);
+    }
+    void CheckForGameOver()
+    {
+        if(tableau.Count==0)
+        {
+            GameOver(true);
+            return;
+        }
+        if(drawPile.Count>0)
+        {
+            return;
+        }
+        foreach(CardProspector cd in tableau)
+        {
+            if(AdjacentRank(cd, target))
+            {
+                return;
+            }
+        }
+       GameOver(false);
+    }
+    void GameOver(bool won)
+    {
+        if(won){print("you won");
+        } else{print("you lost");}
+        SceneManager.LoadScene("_Prospector_Scene_0");
     }
 }

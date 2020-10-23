@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/__Prospector_Scene_0.unity
+    guid: 777eda3bcca263d45a429c35d6b34f59
   m_configObjects: {}
