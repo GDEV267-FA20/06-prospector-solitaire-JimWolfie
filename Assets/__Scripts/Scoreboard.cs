@@ -15,14 +15,23 @@ public class Scoreboard : MonoBehaviour
     [SerializeField]private string _scoreString;
     private Transform canvasTransform;
 
-    public int score
-    {
-        get{return(_score);}set{_score = value; _scoreString=_score.ToString("N0");}
+    public int score{
+        get{
+            return(_score);
+        }
+        set{
+            _score = value;
+            scoreString=_score.ToString("N0");
+        }
     }
 
     public string scoreString
     {
-        get{return(_scoreString);}set{_scoreString = value; GetComponent<Text>().text = _scoreString; }
+        get{
+            return (_scoreString);
+        } set{_scoreString = value;
+            GetComponent<Text>().text = _scoreString;
+        }
     }
 
     private void Awake()

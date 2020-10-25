@@ -68,7 +68,7 @@ public class Prospector : MonoBehaviour
 
     CardProspector Draw()
     {
-        print(drawPile[0]);
+        //print(drawPile[0]);
         if(drawPile[0]!=null)
         {
             CardProspector cd = drawPile[0];
@@ -298,6 +298,7 @@ public class Prospector : MonoBehaviour
                 p0.x/=Screen.width;
                 p0.y/=Screen.height;
                 fsPts = new List<Vector2>();
+                fsPts.Add(p0);
                 fsPts.Add(fsPosMid);
                 fsPts.Add(fsPosRun);
                 fs = Scoreboard.S.CreateFloatingScore(ScoreManager.CHAIN, fsPts);

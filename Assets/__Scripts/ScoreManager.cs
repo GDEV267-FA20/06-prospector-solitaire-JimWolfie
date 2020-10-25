@@ -42,11 +42,12 @@ public class ScoreManager : MonoBehaviour
 
     static public void EVENT(eScoreEvent evt)
     {
-        try{
+        try
+        {  // try-catch stops an error from breaking your program
             S.Event(evt);
-        }catch(System.NullReferenceException nre)
+        } catch(System.NullReferenceException nre)
         {
-            Debug.LogError("ScoreManager:Event() called while S=null.\n"+nre);
+            Debug.LogError("ScoreManager.EVENT() called while S=null.\n"+nre);
         }
     }
     void Event(eScoreEvent evt)

@@ -42,8 +42,9 @@ public class FloatingScore : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = Vector2.zero;
-        txt.GetComponent<Text>();
-
+        //print(txt);
+        txt = GetComponent<Text>();
+        //print(txt);
         bezierPts = new List<Vector2>(ePts);
 
         if(ePts.Count ==1)
