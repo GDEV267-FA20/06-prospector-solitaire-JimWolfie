@@ -18,10 +18,10 @@
 
   <slot type="target" x="-1.5" y="0" layer="4"/>
   
-  <slot type="hand" x="0" y="-8" player="1" rot="0"  layer="3"/>
-  <slot type="hand" x="-10" y="0" player="2" rot="270"  layer="3"/>
-  <slot type="hand" x="0" y="8" player="3" rot="180"  layer="3"/>
-  <slot type="hand" x="10" y="0" player ="4"  rot="90" layer="3"/>
+  <slot type="hand" x="0" y="-8" rot="0" player="1" layer="3"/>
+  <slot type="hand" x="-10" y="0" rot="270" player="2" layer="3"/>
+  <slot type="hand" x="0" y="8" rot="180" player="3" layer="3"/>
+  <slot type="hand" x="10" y="0" rot="90" player="4" layer="3"/>
 	
 	
 </xml>
