@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[System.Serializable]
-/*public class SlotDef
+[System.Serializable]
+public class SlotDef
 {
     public float x;
     public float y;
@@ -14,8 +14,10 @@ using UnityEngine;
     public List<int> hiddenBy = new List<int>();
     public string type = "slot";
     public Vector2 stagger;
-}*/
-public class Layout : MonoBehaviour
+    public int player;
+    public Vector3 pos;
+}
+public class BartokLayout : MonoBehaviour
 {
     public PT_XMLReader xmlr;
     public PT_XMLHashtable xml;
