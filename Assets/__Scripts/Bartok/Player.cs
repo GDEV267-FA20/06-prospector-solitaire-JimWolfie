@@ -19,8 +19,15 @@ public class Player
     {
         if(hand==null)hand = new List<CardBartok>();
         hand.Add(eCB);
+        if(type == PlayerType.human)
+        {
+            CardBartok[] cards = hand.ToArray();
+            cards = cards.OrderBy(cd=> cd.rank).ToArray();
+            hand = new List<CardBartok>(cards);
+        }
         FanHand();
         return(eCB);
+
 
     }
     public CardBartok RemoveCard(CardBartok cb)
