@@ -11,6 +11,8 @@ public class Bartok : MonoBehaviour
     public TextAsset layoutXML;
     public Vector3 layoutCenter = Vector3.zero;
     public float handFanDegrees = 10f;
+    public int numStartingCards=7;
+    public float drawTimeStagger =0.1f;
 
     [Header("set dynamically")]
     public Deck deck;
@@ -83,6 +85,30 @@ public class Bartok : MonoBehaviour
         
         }
         players[0].type = PlayerType.human;
+        CardBartok tCB;
+        for(int i = 0; i<numStartingCards; i++)
+        {
+            for(int j=0; j<4; j++)
+            {
+                tCB =Draw();
+                tCB.timeStart = Time.time + drawTimeStagger*(i*4 +j);
+                players[(j+1)%4].AddCArd(tCB);
+            }
+        }
+        Invoke("DrawFirstTarget", drawTimeStagger*(numStartingCards*4+4));
+    }
+    public void DrawFirstTarget()
+    {
+        CardBartok tCB = MoveToTarget(Draw());
+    }
+    public CardBartok MoveToTarget(CardBartok tCB)
+    {
+        tCB.timeStart=0;
+        tCB.MoveTo(layout.discardPile.pos+Vector3.back);
+        tCB.state = CBState.toTarget;
+        tCB.faceUp = true;
+        targetCard = tCB;
+        return tCB;
     }
     public CardBartok Draw()
     {
