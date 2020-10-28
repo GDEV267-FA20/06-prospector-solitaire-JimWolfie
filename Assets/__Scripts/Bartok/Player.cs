@@ -57,11 +57,16 @@ public class Player
             pos = rotQ*pos;
             pos+= handSlotDef.pos;
             pos.z=-0.5f*i;
+            hand[i].MoveTo(pos, rotQ);
+            hand[i].state = CBState.toHand;
+            /*
             hand[i].transform.localPosition = pos;
             hand[i].transform.rotation = rotQ;
             hand[i].state = CBState.hand;
+            */
             hand[i].faceUp = (type == PlayerType.human);
             hand[i].SetSortOrder(i*4);
+            
         }
     }
 }
