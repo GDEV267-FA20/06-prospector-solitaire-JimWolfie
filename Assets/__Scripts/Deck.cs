@@ -34,7 +34,7 @@ public class Deck : MonoBehaviour
     public Dictionary<string, Sprite> dictSuits;
 
 
-    public void InitDeck(string deckXMLText)
+    public void InitDeck(ref TextAsset[] decks)
     {
         
         if(GameObject.Find("_Deck")==null)
@@ -49,7 +49,16 @@ public class Deck : MonoBehaviour
             {"H",suitHeart},
             {"S",suitSpade}
         };
-        ReadDeck(deckXMLText);
+
+        if(decks != null && decks.Length>0)
+        {
+            for(int i = 0; i<decks.Length; i++)
+            {
+                var u = decks[i];
+                ReadDeck(u.text);
+            }
+
+        }
         MakeCards();
     }
     public void ReadDeck(string deckXMLText)
@@ -116,6 +125,18 @@ public class Deck : MonoBehaviour
         }
 
     }//end of read deck
+    public void ReadDeck(ref TextAsset[] decks)
+    {
+        if(decks != null && decks.Length>0)
+        {
+            for(int i=0; i<decks.Length; i++)
+            {
+                var u = decks[i];
+                ReadDeck(u.text);
+            }
+            
+        }
+    }
     public CardDefinition GetCardDefinitionByRank(int rnk)
     {
         foreach(CardDefinition cd in cardDefs)
