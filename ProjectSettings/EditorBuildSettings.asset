@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/__Prospector_Scene_0.unity
     guid: 777eda3bcca263d45a429c35d6b34f59
+  - enabled: 1
+    path: Assets/Scenes/_Spider_Scene_2.unity
+    guid: d8a42d3833b4a294b8abd8dcc79b1017
   m_configObjects: {}

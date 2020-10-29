@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckXML: {fileID: 4900000, guid: c76312a0fb08948699e1abf935e4a957, type: 3}
-  SpiderXML: {fileID: 4900000, guid: 61f3f05951a2f4d98b35bddbc7549908, type: 3}
+  SpiderXML: {fileID: 4900000, guid: ad7fede83d8c9094e8f96edfac2f1bfa, type: 3}
   xOffset: 3
   yOffset: -2.5
   layoutCenter: {x: 0, y: 0, z: 0}
@@ -578,6 +578,9 @@ MonoBehaviour:
   fsPosMid2: {x: 0.4, y: 1}
   fsPosEnd: {x: 0.5, y: 0.95}
   reloadDelay: 2
+  gameOverText: {fileID: 667581676}
+  roundResultText: {fileID: 1109889399}
+  highScoreText: {fileID: 1206689613}
   deck: {fileID: 0}
   layout: {fileID: 0}
   drawPile: []
