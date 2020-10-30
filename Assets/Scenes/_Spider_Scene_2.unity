@@ -568,9 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cdf859d4b1a16498b778aa2306727c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckXML:
-  - {fileID: 4900000, guid: c76312a0fb08948699e1abf935e4a957, type: 3}
-  - {fileID: 4900000, guid: c76312a0fb08948699e1abf935e4a957, type: 3}
+  deckXML: {fileID: 4900000, guid: c76312a0fb08948699e1abf935e4a957, type: 3}
+  numDecks: 2
   SpiderXML: {fileID: 4900000, guid: ad7fede83d8c9094e8f96edfac2f1bfa, type: 3}
   xOffset: 3
   yOffset: -2.5

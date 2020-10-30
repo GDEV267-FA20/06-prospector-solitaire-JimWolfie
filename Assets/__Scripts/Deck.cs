@@ -27,14 +27,14 @@ public class Deck : MonoBehaviour
     [Header("Set Dynamically")]
     public PT_XMLReader xlmr;
     public List<string> cardNames;
-    public List<Card> cards;
+    public List<Card> cards = new List<Card>();
     public List<Decorator> decorators;
     public List <CardDefinition> cardDefs;
     public Transform deckAnchor;
     public Dictionary<string, Sprite> dictSuits;
 
 
-    public void InitDeck(ref TextAsset[] decks)
+    public void InitDeck(ref TextAsset decks)
     {
         
         if(GameObject.Find("_Deck")==null)
@@ -50,15 +50,9 @@ public class Deck : MonoBehaviour
             {"S",suitSpade}
         };
 
-        if(decks != null && decks.Length>0)
-        {
-            for(int i = 0; i<decks.Length; i++)
-            {
-                var u = decks[i];
-                ReadDeck(u.text);
-            }
-
-        }
+      
+        ReadDeck(decks.text);
+           
         MakeCards();
     }
     public void ReadDeck(string deckXMLText)
@@ -125,18 +119,7 @@ public class Deck : MonoBehaviour
         }
 
     }//end of read deck
-    public void ReadDeck(ref TextAsset[] decks)
-    {
-        if(decks != null && decks.Length>0)
-        {
-            for(int i=0; i<decks.Length; i++)
-            {
-                var u = decks[i];
-                ReadDeck(u.text);
-            }
-            
-        }
-    }
+    
     public CardDefinition GetCardDefinitionByRank(int rnk)
     {
         foreach(CardDefinition cd in cardDefs)
@@ -159,7 +142,7 @@ public class Deck : MonoBehaviour
                 cardNames.Add(s+(i+1));
             }
         }
-        cards = new List<Card>();
+        
         for(int i=0; i<cardNames.Count; i++)
         {
             cards.Add(MakeCards(i));
